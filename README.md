@@ -91,9 +91,9 @@ Date:        Year → Quarter → MonthNumber → MonthName
 
 ## ⚙️ ETL Pipeline — SSIS
 
-Three SSIS packages handle the complete pipeline, designed for **idempotent, automated execution** — running Package 1 triggers the entire pipeline end-to-end via an Execute Package Task chain.
+Three SSIS packages handle the complete pipeline, designed for **idempotent, automated execution** — running `GS_Load_Staging.dtsx` triggers the entire pipeline end-to-end via an Execute Package Task chain.
 
-### Package 1 — `GS_Load_Staging.dtsx`
+### `GS_Load_Staging.dtsx`
 
 Extracts raw data from three different source types and lands it into the staging database with zero transformations. **OnPreExecute Event Handlers** TRUNCATE each staging table before every load, preventing duplicate accumulation across runs.
 
@@ -106,7 +106,7 @@ Extracts raw data from three different source types and lands it into the stagin
 
 The staging layer **decouples extraction from transformation** — protecting source systems and providing a single unified SQL Server buffer before any DW loading begins.
 
-### Package 2 — `GS_Load_DW.dtsx`
+### `GS_Load_DW.dtsx`
 
 Reads from staging and applies all transformations before loading the data warehouse. Dimensions are loaded sequentially before the fact table to guarantee all surrogate keys exist at lookup time.
 
@@ -123,9 +123,9 @@ Reads from staging and applies all transformations before loading the data wareh
 | Data quality routing | **Conditional Split** | Route invalid records to quarantine table |
 | Timestamp stamping | **Derived Column** → `GETDATE()` | Populate `accm_txn_create_time` on insert |
 
-### Package 3 — `GS_Update_AccumFact.dtsx`
+### `Update_Fact_Completions.dtsx`
 
-A dedicated, independently schedulable package that implements the accumulating snapshot update pattern. It reads a `transaction_completions.csv` feed from an external system and updates FactSales rows in place.
+A dedicated, independently schedulable package that implements the accumulating snapshot update pattern. Reads `transaction_completions.csv` (an external system feed) and updates FactSales rows in place.
 
 ```sql
 UPDATE FactSales
@@ -138,24 +138,12 @@ A **Lookup transformation** validates each incoming `txn_id` against `RowID` in 
 
 ---
 
-## 📦 Data Sources
-
-| Source | Type | Content |
-|--------|------|---------|
-| `GlobalSuperstore_Source` SQL DB | Relational | `dbo.Orders` (25,035 rows) + `dbo.OrderLines` (51,290 rows) |
-| `Global_Superstore.csv` | Flat File | CustomerID, CustomerName, Segment |
-| `Product_Catalog.xlsx` | Microsoft Excel | 10,292 unique products with category classification |
-
-Working across **three heterogeneous source types** in a single coordinated pipeline reflects real-world enterprise data integration.
-
----
-
 ## 🧊 OLAP Cube — SSAS
 
 An **Analysis Services Multidimensional** project (`GlobalSuperstore_Cube`) was built and deployed on top of the data warehouse:
 
 - **Measure group:** FactSales — Sales, Quantity, Discount, Profit, ShippingCost
-- **Dimensions:** DimDate, DimCustomer, DimProduct, DimLocation, DimShipMode — all with Regular relationships to the measure group
+- **Dimensions:** Dim Customer, Dim Date, Dim Location, Dim Product, Dim Ship Mode — all with Regular relationships to the measure group
 - **Hierarchies defined:** Product Category (3 levels), Geography (5 levels), Date (4 levels)
 - **Connected to:** Excel PivotTables and Power BI for live multi-dimensional analysis
 
@@ -173,7 +161,7 @@ An **Analysis Services Multidimensional** project (`GlobalSuperstore_Cube`) was 
 
 ## 📈 Power BI Reports
 
-Four reports built in Power BI connected directly to the data warehouse:
+Four reports built in `PowerBIReports.pbix` connected directly to the data warehouse:
 
 | Report | Visuals & Features |
 |--------|--------------------|
@@ -197,28 +185,35 @@ Four reports built in Power BI connected directly to the data warehouse:
 
 ---
 
-## 📁 Project Structure
+## 📁 Repository Structure
 
 ```
-GlobalSuperstore_ETL/
-├── GS_Load_Staging.dtsx          ← Package 1: Extract all sources → Staging
-├── GS_Load_DW.dtsx               ← Package 2: Transform + Load dimensions + fact
-├── GS_Update_AccumFact.dtsx      ← Package 3: Update accumulating fact timestamps
-└── Connection Managers/
-    ├── GlobalSuperstore_Source
-    ├── GlobalSuperstore_Staging
-    └── GlobalSuperstore_DW
-
-GlobalSuperstore_Cube/
-└── GlobalSuperstore_DW.cube      ← Deployed SSAS OLAP cube
-
-Data Sources/
-├── GlobalSuperstore_Source/      ← SQL Server DB
-├── Global_Superstore.csv         ← Raw customer flat file
-└── Product_Catalog.xlsx          ← Product catalog (Excel)
-
-Databases/
-├── GlobalSuperstore_Source       ← OLTP source
-├── GlobalSuperstore_Staging      ← Intermediate staging
-└── GlobalSuperstore_DW           ← Production data warehouse
+Global-Superstore-Data-Warehouse/
+│
+├── GlobalSuperstore_ETL/               ← SSIS ETL project
+│   ├── GS_Load_Staging.dtsx            ← Package 1: Extract all sources → Staging DB
+│   ├── GS_Load_DW.dtsx                 ← Package 2: Transform + Load dimensions + FactSales
+│   ├── Update_Fact_Completions.dtsx    ← Package 3: Update accumulating fact timestamps
+│   ├── Project.params                  ← Project-level parameters
+│   └── GlobalSuperstore_ETL.dtproj     ← SSIS project file
+│
+├── GlobalSuperstore_Cube/              ← SSAS OLAP cube project
+│   ├── Global Superstore DW.cube       ← Cube definition
+│   ├── Global Superstore DW.ds         ← Data source
+│   ├── Global Superstore DW.dsv        ← Data source view
+│   ├── Dim Customer.dim                ← Customer dimension (SCD Type 2)
+│   ├── Dim Date.dim                    ← Date dimension
+│   ├── Dim Location.dim                ← Location dimension (5-level hierarchy)
+│   ├── Dim Product.dim                 ← Product dimension (3-level hierarchy)
+│   ├── Dim Ship Mode.dim               ← Ship mode dimension
+│   └── GlobalSuperstore_Cube.dwproj    ← SSAS project file
+│
+├── DataWarehouse/                      ← Data warehouse project files
+│
+├── create_dw_schema.sql                ← DDL: Star schema table creation scripts
+├── Preparation_of_data_Sources.sql     ← SQL: Source DB setup and data preparation
+├── Global_Superstore.csv               ← Source data: raw transaction flat file
+├── Product_Catalog.xlsx                ← Source data: product catalog (10,292 products)
+├── transaction_completions.csv         ← Source data: accumulating fact completion feed
+└── PowerBIReports.pbix                 ← Power BI report file (4 reports)
 ```
