@@ -1,0 +1,128 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "F:\\D\\Y3S2\\DWBI\\Project\\GlobalSuperstore_Cube\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{7376A484-FE0A-A5FF-93D8-9F7A9B2D9517}|GlobalSuperstore_Cube\\GlobalSuperstore_Cube.dwproj|F:\\D\\Y3S2\\DWBI\\Project\\GlobalSuperstore_Cube\\GlobalSuperstore_Cube\\Dim Date.dim||{B4191D15-2D32-45F2-906F-E91BBAAA6059}|Design",
+      "RelativeMoniker": "D:0:0:{7376A484-FE0A-A5FF-93D8-9F7A9B2D9517}|GlobalSuperstore_Cube\\GlobalSuperstore_Cube.dwproj|solutionrelative:GlobalSuperstore_Cube\\Dim Date.dim||{B4191D15-2D32-45F2-906F-E91BBAAA6059}|Design"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7376A484-FE0A-A5FF-93D8-9F7A9B2D9517}|GlobalSuperstore_Cube\\GlobalSuperstore_Cube.dwproj|F:\\D\\Y3S2\\DWBI\\Project\\GlobalSuperstore_Cube\\GlobalSuperstore_Cube\\Dim Customer.dim||{B4191D15-2D32-45F2-906F-E91BBAAA6059}|Design",
+      "RelativeMoniker": "D:0:0:{7376A484-FE0A-A5FF-93D8-9F7A9B2D9517}|GlobalSuperstore_Cube\\GlobalSuperstore_Cube.dwproj|solutionrelative:GlobalSuperstore_Cube\\Dim Customer.dim||{B4191D15-2D32-45F2-906F-E91BBAAA6059}|Design"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7376A484-FE0A-A5FF-93D8-9F7A9B2D9517}|GlobalSuperstore_Cube\\GlobalSuperstore_Cube.dwproj|F:\\D\\Y3S2\\DWBI\\Project\\GlobalSuperstore_Cube\\GlobalSuperstore_Cube\\Dim Location.dim||{B4191D15-2D32-45F2-906F-E91BBAAA6059}|Design",
+      "RelativeMoniker": "D:0:0:{7376A484-FE0A-A5FF-93D8-9F7A9B2D9517}|GlobalSuperstore_Cube\\GlobalSuperstore_Cube.dwproj|solutionrelative:GlobalSuperstore_Cube\\Dim Location.dim||{B4191D15-2D32-45F2-906F-E91BBAAA6059}|Design"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7376A484-FE0A-A5FF-93D8-9F7A9B2D9517}|GlobalSuperstore_Cube\\GlobalSuperstore_Cube.dwproj|F:\\D\\Y3S2\\DWBI\\Project\\GlobalSuperstore_Cube\\GlobalSuperstore_Cube\\Dim Product.dim||{B4191D15-2D32-45F2-906F-E91BBAAA6059}|Design",
+      "RelativeMoniker": "D:0:0:{7376A484-FE0A-A5FF-93D8-9F7A9B2D9517}|GlobalSuperstore_Cube\\GlobalSuperstore_Cube.dwproj|solutionrelative:GlobalSuperstore_Cube\\Dim Product.dim||{B4191D15-2D32-45F2-906F-E91BBAAA6059}|Design"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7376A484-FE0A-A5FF-93D8-9F7A9B2D9517}|GlobalSuperstore_Cube\\GlobalSuperstore_Cube.dwproj|F:\\D\\Y3S2\\DWBI\\Project\\GlobalSuperstore_Cube\\GlobalSuperstore_Cube\\Dim Ship Mode.dim||{B4191D15-2D32-45F2-906F-E91BBAAA6059}|Design",
+      "RelativeMoniker": "D:0:0:{7376A484-FE0A-A5FF-93D8-9F7A9B2D9517}|GlobalSuperstore_Cube\\GlobalSuperstore_Cube.dwproj|solutionrelative:GlobalSuperstore_Cube\\Dim Ship Mode.dim||{B4191D15-2D32-45F2-906F-E91BBAAA6059}|Design"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7376A484-FE0A-A5FF-93D8-9F7A9B2D9517}|GlobalSuperstore_Cube\\GlobalSuperstore_Cube.dwproj|F:\\D\\Y3S2\\DWBI\\Project\\GlobalSuperstore_Cube\\GlobalSuperstore_Cube\\Global Superstore DW.cube||{B4191D15-2D32-45F2-906F-E91BBAAA6059}|Design",
+      "RelativeMoniker": "D:0:0:{7376A484-FE0A-A5FF-93D8-9F7A9B2D9517}|GlobalSuperstore_Cube\\GlobalSuperstore_Cube.dwproj|solutionrelative:GlobalSuperstore_Cube\\Global Superstore DW.cube||{B4191D15-2D32-45F2-906F-E91BBAAA6059}|Design"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7376A484-FE0A-A5FF-93D8-9F7A9B2D9517}|GlobalSuperstore_Cube\\GlobalSuperstore_Cube.dwproj|F:\\D\\Y3S2\\DWBI\\Project\\GlobalSuperstore_Cube\\GlobalSuperstore_Cube\\Global Superstore DW.dsv||{B4191D15-2D32-45F2-906F-E91BBAAA6059}|Design",
+      "RelativeMoniker": "D:0:0:{7376A484-FE0A-A5FF-93D8-9F7A9B2D9517}|GlobalSuperstore_Cube\\GlobalSuperstore_Cube.dwproj|solutionrelative:GlobalSuperstore_Cube\\Global Superstore DW.dsv||{B4191D15-2D32-45F2-906F-E91BBAAA6059}|Design"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Dim Date.dim [Design]",
+              "DocumentMoniker": "F:\\D\\Y3S2\\DWBI\\Project\\GlobalSuperstore_Cube\\GlobalSuperstore_Cube\\Dim Date.dim",
+              "RelativeDocumentMoniker": "GlobalSuperstore_Cube\\Dim Date.dim",
+              "ToolTip": "F:\\D\\Y3S2\\DWBI\\Project\\GlobalSuperstore_Cube\\GlobalSuperstore_Cube\\Dim Date.dim [Design]",
+              "RelativeToolTip": "GlobalSuperstore_Cube\\Dim Date.dim [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2026-04-03T14:22:04.654Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Dim Customer.dim [Design]",
+              "DocumentMoniker": "F:\\D\\Y3S2\\DWBI\\Project\\GlobalSuperstore_Cube\\GlobalSuperstore_Cube\\Dim Customer.dim",
+              "RelativeDocumentMoniker": "GlobalSuperstore_Cube\\Dim Customer.dim",
+              "ToolTip": "F:\\D\\Y3S2\\DWBI\\Project\\GlobalSuperstore_Cube\\GlobalSuperstore_Cube\\Dim Customer.dim [Design]",
+              "RelativeToolTip": "GlobalSuperstore_Cube\\Dim Customer.dim [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2026-04-03T14:20:15.703Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Dim Location.dim [Design]",
+              "DocumentMoniker": "F:\\D\\Y3S2\\DWBI\\Project\\GlobalSuperstore_Cube\\GlobalSuperstore_Cube\\Dim Location.dim",
+              "RelativeDocumentMoniker": "GlobalSuperstore_Cube\\Dim Location.dim",
+              "ToolTip": "F:\\D\\Y3S2\\DWBI\\Project\\GlobalSuperstore_Cube\\GlobalSuperstore_Cube\\Dim Location.dim [Design]",
+              "RelativeToolTip": "GlobalSuperstore_Cube\\Dim Location.dim [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2026-04-03T10:53:55.937Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Dim Ship Mode.dim [Design]",
+              "DocumentMoniker": "F:\\D\\Y3S2\\DWBI\\Project\\GlobalSuperstore_Cube\\GlobalSuperstore_Cube\\Dim Ship Mode.dim",
+              "RelativeDocumentMoniker": "GlobalSuperstore_Cube\\Dim Ship Mode.dim",
+              "ToolTip": "F:\\D\\Y3S2\\DWBI\\Project\\GlobalSuperstore_Cube\\GlobalSuperstore_Cube\\Dim Ship Mode.dim [Design]",
+              "RelativeToolTip": "GlobalSuperstore_Cube\\Dim Ship Mode.dim [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2026-04-03T10:53:40.56Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Dim Product.dim [Design]",
+              "DocumentMoniker": "F:\\D\\Y3S2\\DWBI\\Project\\GlobalSuperstore_Cube\\GlobalSuperstore_Cube\\Dim Product.dim",
+              "RelativeDocumentMoniker": "GlobalSuperstore_Cube\\Dim Product.dim",
+              "ToolTip": "F:\\D\\Y3S2\\DWBI\\Project\\GlobalSuperstore_Cube\\GlobalSuperstore_Cube\\Dim Product.dim [Design]",
+              "RelativeToolTip": "GlobalSuperstore_Cube\\Dim Product.dim [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2026-04-02T20:02:45.1Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Global Superstore DW.cube [Design]",
+              "DocumentMoniker": "F:\\D\\Y3S2\\DWBI\\Project\\GlobalSuperstore_Cube\\GlobalSuperstore_Cube\\Global Superstore DW.cube",
+              "RelativeDocumentMoniker": "GlobalSuperstore_Cube\\Global Superstore DW.cube",
+              "ToolTip": "F:\\D\\Y3S2\\DWBI\\Project\\GlobalSuperstore_Cube\\GlobalSuperstore_Cube\\Global Superstore DW.cube [Design]",
+              "RelativeToolTip": "GlobalSuperstore_Cube\\Global Superstore DW.cube [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2026-04-03T09:54:38.635Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "Global Superstore DW.dsv [Design]",
+              "DocumentMoniker": "F:\\D\\Y3S2\\DWBI\\Project\\GlobalSuperstore_Cube\\GlobalSuperstore_Cube\\Global Superstore DW.dsv",
+              "RelativeDocumentMoniker": "GlobalSuperstore_Cube\\Global Superstore DW.dsv",
+              "ToolTip": "F:\\D\\Y3S2\\DWBI\\Project\\GlobalSuperstore_Cube\\GlobalSuperstore_Cube\\Global Superstore DW.dsv [Design]",
+              "RelativeToolTip": "GlobalSuperstore_Cube\\Global Superstore DW.dsv [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2026-04-03T09:31:27.336Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
